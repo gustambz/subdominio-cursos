@@ -10,19 +10,15 @@
         .pdp-wrapper { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 30px; color: #1e293b !important; }
         .pdp-main { flex: 2; min-width: 300px; }
         
-        /* Forçando a Sidebar a ficar totalmente visível */
         .pdp-sidebar { flex: 1; min-width: 300px; background: #111c2e !important; padding: 25px; border-radius: 8px; border: 1px solid #ff2a43; height: fit-content; position: sticky; top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); color: #ffffff !important; }
         .pdp-sidebar span { color: #ff2a43 !important; font-weight: bold; }
         .pdp-sidebar h3 { color: #ffffff !important; font-size: 22px !important; margin: 10px 0 !important; font-weight: bold !important; display: block !important; }
         .pdp-sidebar p { color: #e2e8f0 !important; font-size: 14px !important; margin-bottom: 10px !important; }
         .pdp-sidebar div, .pdp-sidebar li { color: #ffffff !important; }
         
-        .pdp-nav { display: flex; border-bottom: 2px solid #22314d; margin-bottom: 30px; gap: 20px; padding-bottom: 10px; }
-        .pdp-nav a { color: #64748b; text-decoration: none; font-weight: bold; font-size: 15px; }
-        .pdp-nav a.active { color: #ff2a43; border-bottom: 2px solid #ff2a43; padding-bottom: 10px; margin-bottom: -12px; }
         .badge-tag { background: rgba(255, 42, 67, 0.1); color: #ff2a43; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
         
-        /* Forçando o Acordeão (Matriz) a ficar totalmente visível */
+        /* Acordeão (Matriz) */
         details.accordion-item summary { padding: 18px; font-weight: bold !important; background: #111c2e !important; color: #ffffff !important; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; border: 1px solid #22314d; border-radius: 6px; margin-bottom: 12px; font-size: 16px !important; }
         details.accordion-item summary::-webkit-details-marker { display: none; }
         details.accordion-item summary::after { content: '▼'; font-size: 12px; color: #ff2a43; }
@@ -56,15 +52,10 @@
         
         <div class="pdp-main">
             <span class="badge-tag">TECNÓLOGO • 100% ONLINE • INÍCIO IMEDIATO</span>
-            <h1 style="margin-top: 0; font-size: 36px; color: #0f172a;">Google Tag Manager (GTM)</h1>
+            <h1 style="margin-top: 0; font-size: 36px; color: #0f172a; margin-bottom: 20px;">Google Tag Manager (GTM)</h1>
             <p class="subtitle" style="font-size: 18px; color: #64748b; margin-bottom: 30px;">Assuma o controle total do rastreamento do seu site, instale pixels e manipule a Camada de Dados (Data Layer).</p>
 
-            <div class="pdp-nav">
-                <a href="#sobre" class="active">Sobre o curso</a>
-                <a href="#grade">Grade curricular</a>
-            </div>
-
-            <section id="sobre" style="margin-bottom: 40px;">
+            <section id="sobre" style="margin-bottom: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
                 <h2 style="color: #0f172a; margin-bottom: 15px;">Sobre a Graduação</h2>
                 <p style="color: #475569;">Projetado para eliminar a dependência de equipes de desenvolvimento de software. Você dominará as regras de acionadores de cliques complexos, envio de formulários assíncronos, rastreamento de vídeos e aprenderá a criar variáveis JavaScript para alimentar qualquer plataforma de marketing ou analytics de forma ágil.</p>
             </section>
@@ -121,6 +112,35 @@
         </div>
 
     </main>
+
+    <section class="lead-section" id="cadastro">
+        <div class="lead-container">
+            <div class="lead-text">
+                <h2 style="color: #ffffff; border-left: 4px solid #e11d48; padding-left: 15px; margin-top: 0;">Deseja receber novidades sobre as turmas?</h2>
+                <p>Fique por dentro das vagas abertas, atualizações de mercado e receba em primeira mão cronogramas completos e cupons de desconto.</p>
+            </div>
+            <div class="lead-form-box">
+                <h3 style="color: #ffffff; margin-top: 0; margin-bottom: 15px;">Receba Nossa Grade Curricular</h3>
+                <form id="form-lead">
+                    <div class="form-group">
+                        <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="E-mail Corporativo" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="interesse" name="interesse" required>
+                            <option value="gtm" selected>Google Tag Manager</option>
+                            <option value="analytics_gestao">Analytics para Gestão</option>
+                            <option value="ga4">Google Analytics 4</option>
+                            <option value="bigquery">BigQuery & SQL</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">Quero Receber a Grade</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <footer class="main-footer">
         <p>&copy; 2026 Meu Analytics Labs. Todos os direitos reservados. Protótipo educacional para portfólio de Web Analytics.</p>
