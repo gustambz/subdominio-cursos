@@ -4,3 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossos Cursos | Meu Analytics Labs</title>
+    <link rel="stylesheet" href="https://meuanalytics.com.br/style.css">
+    <style>
+        body { background-color: #f8fafc; }
+        .vitrine-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .vitrine-title { text-align: center; font-size: 32px; font-weight: 800; color: #0f172a; margin-bottom: 10px; }
+        .vitrine-subtitle { text-align: center; color: #64748b; margin-bottom: 5px; font-size: 16px; }
+        
+        .courses-grid { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; justify-content: center; }
+        
+        .course-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; width: 350px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); transition: transform 0.2s, box-shadow 0.2s; }
+        .course-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        
+        .card-banner { background: #111c2e; padding: 30px; text-align: center; font-size: 40px; border-bottom: 3px solid #ff2a43; }
+        .card-body { padding: 25px; flex: 1; display: flex; flex-direction: column; }
+        .card-title { font-size: 20px; font-weight: 700; color: #0f172a; margin-bottom: 10px; min-height: 56px; display: flex; align-items: center; }
+        .card-text { color: #475569; font-size: 14px; line-height: 1.5; margin-bottom: 20px; flex: 1; }
+        
+        .card-price-box { border-top: 1px solid #e2e8f0; padding-top: 15px; margin-bottom: 15px; }
+        .card-price-old { font-size: 12px; color: #94a3b8; text-decoration: line-through; }
+        .card-price-new { font-size: 24px; font-weight: 800; color: #ff2a43; margin-top: 2px; }
+        
+        .btn-view-course { display: block; width: 100%; text-align: center; background: #0066ff; color: #ffffff !important; text-decoration: none; padding: 12px; border-radius: 6px; font-weight: 700; font-size: 15px; transition: background 0.2s; }
+        .btn-view-course:hover { background: #0055cc; }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <a href="https://meuanalytics.com.br/" style="text-decoration: none;">
+                <div class="logo"><span class="logo-accent">MEU</span> ANALYTICS <span class="logo-sub">LABS</span></div>
+            </a>
+            <nav class="nav-menu">
+                <a href="https://meuanalytics.com.br/">Home</a>
+                <a href="https://cursos.meuanalytics.com.br/nossos-cursos/" style="color: #ff2a43; font-weight: bold;">Nossos Cursos</a>
+                <a href="https://meuanalytics.com.br/#ingresso">Formas de Ingresso</a>
+                <a href="https://meuanalytics.com.br/#sobre">Sobre Nós</a>
+                <a href="https://meuanalytics.com.br/login/" class="btn-login-nav">Entrar</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="vitrine-container">
+        <h1 class="vitrine-title">Nossas Especializações</h1>
+        <p class="vitrine-subtitle">Escolha a trilha ideal para dominar a arquitetura de dados e engenharia de tags.</p>
+        <p style="text-align: center; font-size: 12px; color: #94a3b8;">Preços sob condições especiais de Desconto Social ou Ex-Aluno disponíveis na página de cada curso.</p>
+
+        <div class="courses-grid">
+            
+            <div class="course-card">
+                <div class="card-banner">📊</div>
+                <div class="card-body">
+                    <div class="card-title">Analytics para Gestão</div>
+                    <div class="card-text">Aprenda a conectar dados técnicos às metas de negócios, criando painéis executivos e moldando culturas focadas em performance corporativa.</div>
+                    <div class="card-price-box">
+                        <div class="card-price-old">Preço regular: R$ 600,00</div>
+                        <div class="card-price-new">A partir de R$ 84,90<span style="font-size: 12px; color: #64748b; font-weight: normal;">/mês</span></div>
+                    </div>
+                    <a href="../analytics-gestao/" class="btn-view-course">Conhecer Curso</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="card-banner">📈</div>
+                <div class="card-body">
+                    <div class="card-title">Google Analytics 4 (GA4)</div>
+                    <div class="card-text">Domine por completo a ferramenta padrão do mercado internacional. Planeje propriedades, fluxos de dados e relatórios personalizados avançados.</div>
+                    <div class="card-price-box">
+                        <div class="card-price-old">Preço regular: R$ 600,00</div>
+                        <div class="card-price-new">A partir de R$ 84,90<span style="font-size: 12px; color: #64748b; font-weight: normal;">/mês</span></div>
+                    </div>
+                    <a href="../ga4/" class="btn-view-course">Conhecer Curso</a>
+                </div>
+            </div>
+
+            <div class="course-card">
+                <div class="card-banner">🏷️</div>
+                <div class="card-body">
+                    <div class="card-title">Google Tag Manager (GTM)</div>
+                    <div class="card-text">Acabe com a dependência de desenvolvedores. Aprenda a injetar pixels de rastreamento, criar acionadores complexos e manipular o Data Layer.</div>
+                    <div class="card-price-box">
+                        <div class="card-price-old">Preço regular: R$ 600,00</div>
+                        <div class="card-price-new">A partir de R$ 84,90<span style="font-size: 12px; color: #64748b; font-weight: normal;">/mês</span></div>
+                    </div>
+                    <a href="../gtm/" class="btn-view-course">Conhecer Curso</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="main-footer" style="margin-top: 80px;">
+        <p>&copy; 2026 Meu Analytics Labs. Ambiente acadêmico simulado.</p>
+    </footer>
+
+</body>
+</html>
