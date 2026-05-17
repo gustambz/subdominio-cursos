@@ -3,16 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso Google Tag Manager (GTM) - Meu Analytics Labs</title>
+    <title>Google Tag Manager - Meu Analytics Labs</title>
     <link rel="stylesheet" href="https://meuanalytics.com.br/style.css">
     <style>
-        .pdp-container { display: flex; flex-wrap: wrap; max-width: 1200px; margin: 40px auto; padding: 0 20px; gap: 40px; }
-        .pdp-content { flex: 2; min-width: 300px; }
-        .pdp-sidebar { flex: 1; min-width: 300px; background: #111c2e; padding: 30px; border-radius: 8px; border: 1px solid #ff2a43; box-shadow: 0 4px 15px rgba(0,0,0,0.3); height: fit-content; position: sticky; top: 20px; }
-        .price-tag { font-size: 36px; color: #ff2a43; font-weight: bold; margin: 15px 0; }
-        .btn-checkout { display: block; width: 100%; text-align: center; background: #ff2a43; color: #fff; padding: 15px; border: none; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 18px; transition: 0.3s; cursor: pointer; }
+        .pdp-wrapper { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 30px; }
+        .pdp-main { flex: 2; min-width: 300px; }
+        .pdp-sidebar { flex: 1; min-width: 300px; background: #111c2e; padding: 25px; border-radius: 8px; border: 1px solid #ff2a43; height: fit-content; position: sticky; top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        
+        .pdp-nav { display: flex; border-bottom: 2px solid #22314d; margin-bottom: 30px; gap: 20px; padding-bottom: 10px; }
+        .pdp-nav a { color: #aaa; text-decoration: none; font-weight: bold; font-size: 15px; }
+        .pdp-nav a.active { color: #ff2a43; border-bottom: 2px solid #ff2a43; padding-bottom: 10px; margin-bottom: -12px; }
+
+        .badge-tag { background: rgba(255, 42, 67, 0.1); color: #ff2a43; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
+        
+        details.accordion-item summary { padding: 18px; font-weight: bold; background: #16243d; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; border: 1px solid #22314d; border-radius: 6px; margin-bottom: 12px; }
+        details.accordion-item summary::-webkit-details-marker { display: none; }
+        details.accordion-item summary::after { content: '▼'; font-size: 12px; color: #ff2a43; }
+        details.accordion-item[open] summary::after { content: '▲'; }
+        .grid-disciplinas { padding: 15px; background: #111c2e; border: 1px solid #22314d; border-top: none; margin-top: -14px; margin-bottom: 12px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; }
+        .disciplina-row { padding: 10px; border-bottom: 1px solid #22314d; font-size: 14px; display: flex; justify-content: space-between; }
+        
+        .price-box { margin: 20px 0; }
+        .old-price { text-decoration: line-through; color: #777; font-size: 14px; }
+        .current-price { font-size: 38px; color: #ff2a43; font-weight: bold; }
+        .btn-checkout { display: block; width: 100%; text-align: center; background: #ff2a43; color: #fff; padding: 16px; border: none; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 18px; transition: 0.3s; cursor: pointer; margin-top: 15px; }
         .btn-checkout:hover { background: #cc1b30; }
-        .badge-ia { background: rgba(255, 42, 67, 0.1); color: #ff2a43; padding: 5px 10px; border-radius: 4px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
     </style>
 </head>
 <body>
@@ -28,38 +43,72 @@
         </div>
     </header>
 
-    <main class="pdp-container" id="product-page" data-item-id="CURSO-003" data-item-name="Google Tag Manager" data-item-category="Tag Management" data-price="89.90">
+    <main class="pdp-wrapper" id="product-page" data-item-id="CURSO-003" data-item-name="Google Tag Manager" data-item-category="Tag Management" data-price="89.90">
         
-        <div class="pdp-content">
-            <span class="badge-ia">TECNÓLOGO • INÍCIO IMEDIATO</span>
-            <h1>Google Tag Manager (GTM)</h1>
-            <p class="subtitle">Instale tags, pixels de conversão, scripts de terceiros e domine a Camada de Dados (Data Layer) sem depender de desenvolvedores.</p>
-            
-            <h2>Assuma o Controle do Rastreamento do seu Site</h2>
-            <p>Aprenda a implementar do zero uma arquitetura de rastreamento escalável e profissional. Entenda as regras de acionadores por cliques, envio de formulários, visibilidade de elementos e crie variáveis JavaScript customizadas para alimentar qualquer ferramenta de marketing ou analytics.</p>
-            
-            <h3>Destaques do Conteúdo Programático:</h3>
-            <ul>
-                <li><strong>Manipulação do Data Layer:</strong> Intercepte e leia eventos complexos de forma nativa e assíncrona.</li>
-                <li><strong>Acionadores Avançados e Regex:</strong> Dispare tags cirurgicamente usando expressões regulares de alto nível.</li>
-                <li><strong>Server-Side Tagging:</strong> Uma introdução prática ao futuro da coleta de dados em nuvem via Cloud Run/GCP.</li>
-            </ul>
+        <div class="pdp-main">
+            <span class="badge-tag">TECNÓLOGO • 100% ONLINE • INÍCIO IMEDIATO</span>
+            <h1 style="margin-top: 0; font-size: 36px;">Google Tag Manager (GTM)</h1>
+            <p class="subtitle" style="font-size: 18px; color: #aaa; margin-bottom: 30px;">Assuma o controle total do rastreamento do seu site, instale pixels e manipule a Camada de Dados (Data Layer).</p>
+
+            <div class="pdp-nav">
+                <a href="#sobre" class="active">Sobre o curso</a>
+                <a href="#grade">Grade curricular</a>
+            </div>
+
+            <section id="sobre" style="margin-bottom: 40px;">
+                <h2>Sobre a Graduação</h2>
+                <p>Projetado para eliminar a dependência de equipes de desenvolvimento de software. Você dominará as regras de acionadores de cliques complexos, envio de formulários assíncronos, rastreamento de vídeos e aprenderá a criar variáveis JavaScript para alimentar qualquer plataforma de marketing ou analytics de forma ágil.</p>
+            </section>
+
+            <section id="grade" style="margin-bottom: 40px;">
+                <h2 style="margin-bottom: 20px;">Matriz Curricular</h2>
+                
+                <details class="accordion-item" open>
+                    <summary>1º Semestre — Injeção de Tags e Variáveis Base</summary>
+                    <div class="grid-disciplinas">
+                        <div class="disciplina-row"><span>Estrutura do GTM (Containers e Fluxos)</span> <span>80h</span></div>
+                        <div class="disciplina-row"><span>Acionadores Base (Cliques, Links e Páginas)</span> <span>80h</span></div>
+                        <div class="disciplina-row"><span>Variáveis Nativas e Customizadas</span> <span>60h</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion-item">
+                    <summary>2º Semestre — Camada de Dados (Data Layer)</summary>
+                    <div class="grid-disciplinas">
+                        <div class="disciplina-row"><span>Compreensão e Leitura do Objeto dataLayer</span> <span>80h</span></div>
+                        <div class="disciplina-row"><span>Eventos Personalizados via Push JavaScript</span> <span>80h</span></div>
+                        <div class="disciplina-row"><span>Rastreamento Complexo de Formulários Dinâmicos</span> <span>60h</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion-item">
+                    <summary>3º Semestre — Arquitetura Avançada e Server-Side</summary>
+                    <div class="grid-disciplinas">
+                        <div class="disciplina-row"><span>Regex (Expressões Regulares) aplicadas a Tags</span> <span>80h</span></div>
+                        <div class="disciplina-row"><span>Introdução Prática ao Server-Side Tagging</span> <span>60h</span></div>
+                        <div class="disciplina-row"><span>Modo de Depuração e Auditoria Completa de Pixels</span> <span>100h</span></div>
+                    </div>
+                </details>
+            </section>
         </div>
 
         <div class="pdp-sidebar">
-            <p><strong>Desconto Selecionado:</strong></p>
-            <h3>Desconto Social</h3>
-            <p>Últimas vagas com este preço especial.</p>
+            <span style="font-size: 12px; letter-spacing: 1px; color: #ff2a43; font-weight: bold;">PLANO SELECIONADO</span>
+            <h3 style="margin: 5px 0 15px 0;">Desconto Social</h3>
+            <p style="font-size: 14px; color: #aaa; margin: 0;">Valor exclusivo para novos alunos matriculados nesta turma:</p>
             
-            <div class="price-tag">R$ 89,90<span style="font-size: 14px; color: #aaa; font-weight: normal;">/mês</span></div>
-            
-            <button id="btn-matricula-checkout" class="btn-checkout">Matricule-se agora —></button>
-            
-            <ul style="list-style: none; padding: 0; margin-top: 25px; font-size: 14px; line-height: 2;">
-                <li>✓ Início imediato</li>
-                <li>✓ Auditoria e modo de depuração (Preview Mode) passo a passo</li>
-                <li>✓ Formação Profissional em IA inclusa</li>
-            </ul>
+            <div class="price-box">
+                <div class="old-price">De R$ 199,90/mês</div>
+                <div class="current-price">R$ 89,90<span style="font-size: 14px; color: #aaa; font-weight: normal;">/mês</span></div>
+            </div>
+
+            <button id="btn-matricula-checkout" class="btn-checkout">Quero me Matricular —></button>
+
+            <div style="margin-top: 20px; border-top: 1px solid #22314d; padding-top: 15px; font-size: 13px; color: #aaa; line-height: 1.8;">
+                <div>✓ Sem taxa de matrícula</div>
+                <div>✓ Domínio completo de dataLayer avançado</div>
+                <div>✓ Acesso completo aos Labs com Inteligência Artificial</div>
+            </div>
         </div>
 
     </main>
