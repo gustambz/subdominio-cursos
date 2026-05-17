@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Cursos | Vitrine Oficial</title>
+    <link rel="stylesheet" href="https://unpkg.com/@mvpcss/mvp">
+    <style>
+        .grid-catalogo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card-catalogo {
+            flex: 1 1 280px;
+            max-width: 320px;
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="https://meuanalytics.com.br">🏠 Voltar para a Home</a>
+            <a href="#"><b>📚 Catálogo de Cursos</b></a>
+        </nav>
+        <h1>Catálogo Completo de Especializações</h1>
+        <p>Você está no subdomínio <code>cursos.meuanalytics.com.br</code>. Explore nossa vitrine de produtos abaixo.</p>
+    </header>
+
+    <main>
+        <hr>
+
+        <section>
+            <div class="grid-catalogo">
+                
+                <aside class="card-catalogo">
+                    <h3>Digital Analytics</h3>
+                    <p>Preço: <b>R$ 199,90</b></p>
+                    <p>Aprenda os conceitos fundamentais para se destacar na cultura de dados.</p>
+                    <a href="curso-digital-analytics.html"><button class="btn-catalogo" data-nome="Digital Analytics" data-id="DA-01" data-preco="199.90">Ver Página de Vendas</button></a>
+                </aside>
+
+                <aside class="card-catalogo">
+                    <h3>Google Analytics 4 (GA4)</h3>
+                    <p>Preço: <b>R$ 299,90</b></p>
+                    <p>Configurações avançadas, auditoria de tags e relatórios personalizados.</p>
+                    <a href="curso-ga4.html"><button class="btn-catalogo" data-nome="GA4" data-id="GA4-02" data-preco="299.90">Ver Página de Vendas</button></a>
+                </aside>
+
+                <aside class="card-catalogo">
+                    <h3>Google Tag Manager (GTM)</h3>
+                    <p>Preço: <b>R$ 249,90</b></p>
+                    <p>Domine a camada de dados (Data Layer) e gerencie tags de forma profissional.</p>
+                    <a href="curso-gtm.html"><button class="btn-catalogo" data-nome="GTM" data-id="GTM-03" data-preco="249.90">Ver Página de Vendas</button></a>
+                </aside>
+
+                <aside class="card-catalogo">
+                    <h3>Google BigQuery</h3>
+                    <p>Preço: <b>R$ 349,90</b></p>
+                    <p>Extraia valor dos dados brutos do GA4 utilizando o poder do SQL.</p>
+                    <a href="curso-bigquery.html"><button class="btn-catalogo" data-nome="BigQuery" data-id="BQ-04" data-preco="349.90">Ver Página de Vendas</button></a>
+                </aside>
+
+                <aside class="card-catalogo">
+                    <h3>Looker Studio</h3>
+                    <p>Preço: <b>R$ 199,90</b></p>
+                    <p>Crie dashboards dinâmicos conectados diretamente ao data warehouse.</p>
+                    <a href="curso-looker-studio.html"><button class="btn-catalogo" data-nome="Looker Studio" data-id="LS-05" data-preco="199.90">Ver Página de Vendas</button></a>
+                </aside>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><small>© 2026 Meu Analytics Cursos. Vitrine de produtos estruturada para mapeamento de e-commerce no GA4.</small></p>
+    </footer>
+
+</body>
+</html>
