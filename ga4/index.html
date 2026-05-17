@@ -5,28 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Analytics 4 - Meu Analytics Labs</title>
     <link rel="stylesheet" href="https://meuanalytics.com.br/style.css">
+    
     <style>
-        .pdp-wrapper { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 30px; }
+        .pdp-wrapper { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 30px; color: #1e293b !important; }
         .pdp-main { flex: 2; min-width: 300px; }
-        .pdp-sidebar { flex: 1; min-width: 300px; background: #111c2e; padding: 25px; border-radius: 8px; border: 1px solid #ff2a43; height: fit-content; position: sticky; top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
         
-        .pdp-nav { display: flex; border-bottom: 2px solid #22314d; margin-bottom: 30px; gap: 20px; padding-bottom: 10px; }
-        .pdp-nav a { color: #aaa; text-decoration: none; font-weight: bold; font-size: 15px; }
-        .pdp-nav a.active { color: #ff2a43; border-bottom: 2px solid #ff2a43; padding-bottom: 10px; margin-bottom: -12px; }
-
+        .pdp-sidebar { flex: 1; min-width: 300px; background: #111c2e !important; padding: 25px; border-radius: 8px; border: 1px solid #ff2a43; height: fit-content; position: sticky; top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); color: #ffffff !important; }
+        .pdp-sidebar span { color: #ff2a43 !important; font-weight: bold; }
+        .pdp-sidebar h3 { color: #ffffff !important; font-size: 22px !important; margin: 10px 0 !important; font-weight: bold !important; display: block !important; }
+        .pdp-sidebar p { color: #e2e8f0 !important; font-size: 14px !important; margin-bottom: 10px !important; }
+        .pdp-sidebar div, .pdp-sidebar li { color: #ffffff !important; }
+        
         .badge-tag { background: rgba(255, 42, 67, 0.1); color: #ff2a43; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
         
-        details.accordion-item summary { padding: 18px; font-weight: bold; background: #16243d; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; border: 1px solid #22314d; border-radius: 6px; margin-bottom: 12px; }
+        details.accordion-item summary { padding: 18px; font-weight: bold !important; background: #111c2e !important; color: #ffffff !important; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; border: 1px solid #22314d; border-radius: 6px; margin-bottom: 12px; font-size: 16px !important; }
         details.accordion-item summary::-webkit-details-marker { display: none; }
         details.accordion-item summary::after { content: '▼'; font-size: 12px; color: #ff2a43; }
         details.accordion-item[open] summary::after { content: '▲'; }
-        .grid-disciplinas { padding: 15px; background: #111c2e; border: 1px solid #22314d; border-top: none; margin-top: -14px; margin-bottom: 12px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; }
-        .disciplina-row { padding: 10px; border-bottom: 1px solid #22314d; font-size: 14px; display: flex; justify-content: space-between; }
+        
+        .grid-disciplinas { padding: 15px; background: #16243d !important; border: 1px solid #22314d; border-top: none; margin-top: -14px; margin-bottom: 12px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; }
+        .disciplina-row { padding: 10px; border-bottom: 1px solid #22314d; font-size: 14px; display: flex; justify-content: space-between; color: #ffffff !important; }
+        .disciplina-row span { color: #e2e8f0 !important; }
+        .disciplina-row span:last-child { color: #ff2a43 !important; font-weight: bold; }
         
         .price-box { margin: 20px 0; }
-        .old-price { text-decoration: line-through; color: #777; font-size: 14px; }
-        .current-price { font-size: 38px; color: #ff2a43; font-weight: bold; }
-        .btn-checkout { display: block; width: 100%; text-align: center; background: #ff2a43; color: #fff; padding: 16px; border: none; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 18px; transition: 0.3s; cursor: pointer; margin-top: 15px; }
+        .current-price { font-size: 38px; color: #ff2a43 !important; font-weight: bold; }
+        .btn-checkout { display: block; width: 100%; text-align: center; background: #ff2a43; color: #fff !important; padding: 16px; border: none; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 18px; transition: 0.3s; cursor: pointer; margin-top: 15px; }
         .btn-checkout:hover { background: #cc1b30; }
     </style>
 </head>
@@ -34,7 +38,7 @@
 
     <header class="main-header">
         <div class="header-container">
-            <div class="logo">MEU ANALYTICS <span>LABS</span></div>
+            <div class="logo">MEU <span class="logo-accent">ANALYTICS</span> <span class="logo-sub">LABS</span></div>
             <nav class="nav-menu">
                 <a href="https://meuanalytics.com.br">Home</a>
                 <a href="https://cursos.meuanalytics.com.br">Nossos Cursos</a>
@@ -47,21 +51,16 @@
         
         <div class="pdp-main">
             <span class="badge-tag">TECNÓLOGO • 100% ONLINE • INÍCIO IMEDIATO</span>
-            <h1 style="margin-top: 0; font-size: 36px;">Google Analytics 4 (GA4)</h1>
-            <p class="subtitle" style="font-size: 18px; color: #aaa; margin-bottom: 30px;">Domine a ferramenta de auditoria e rastreamento oficial do mercado e extraia relatórios avançados sem amostragem.</p>
+            <h1 style="margin-top: 0; font-size: 36px; color: #0f172a; margin-bottom: 20px;">Google Analytics 4 (GA4)</h1>
+            <p class="subtitle" style="font-size: 18px; color: #64748b; margin-bottom: 30px;">Domine a ferramenta de auditoria e rastreamento oficial do mercado e extraia relatórios avançados sem amostragem.</p>
 
-            <div class="pdp-nav">
-                <a href="#sobre" class="active">Sobre o curso</a>
-                <a href="#grade">Grade curricular</a>
-            </div>
-
-            <section id="sobre" style="margin-bottom: 40px;">
-                <h2>Sobre a Graduação</h2>
-                <p>Este curso prático foca na coleta e análise de fluxos de dados multiplataforma (Web + App). O aluno aprenderá desde o planejamento do mapa de tags até a criação de funis de e-commerce e relatórios de exploração customizados, usando dados reais e simulados.</p>
+            <section id="sobre" style="margin-bottom: 40px; border-top: 1px solid #e2e8f0; padding-top: 20px;">
+                <h2 style="color: #0f172a; margin-bottom: 15px;">Sobre a Graduação</h2>
+                <p style="color: #475569;">Este curso prático foca na coleta e análise de fluxos de dados multiplataforma (Web + App). O aluno aprenderá desde o planejamento do mapa de tags até a criação de funis de e-commerce e relatórios de exploração customizados, usando dados reais e simulados.</p>
             </section>
 
             <section id="grade" style="margin-bottom: 40px;">
-                <h2 style="margin-bottom: 20px;">Matriz Curricular</h2>
+                <h2 style="color: #0f172a; margin-bottom: 20px;">Matriz Curricular</h2>
                 
                 <details class="accordion-item" open>
                     <summary>1º Semestre — Arquitetura e Estrutura do GA4</summary>
@@ -93,18 +92,18 @@
         </div>
 
         <div class="pdp-sidebar">
-            <span style="font-size: 12px; letter-spacing: 1px; color: #ff2a43; font-weight: bold;">PLANO SELECIONADO</span>
-            <h3 style="margin: 5px 0 15px 0;">Desconto Social</h3>
-            <p style="font-size: 14px; color: #aaa; margin: 0;">Valor exclusivo para novos alunos matriculados nesta turma:</p>
+            <span>PLANO SELECIONADO</span>
+            <h3>Desconto Social</h3>
+            <p>Valor exclusivo para novos alunos matriculados nesta turma:</p>
             
             <div class="price-box">
-                <div class="old-price">De R$ 199,90/mês</div>
-                <div class="current-price">R$ 89,90<span style="font-size: 14px; color: #aaa; font-weight: normal;">/mês</span></div>
+                <div style="text-decoration: line-through; color: #94a3b8; font-size: 14px; margin-bottom: 5px;">De R$ 199,90/mês</div>
+                <div class="current-price">R$ 89,90<span style="font-size: 14px; color: #94a3b8; font-weight: normal;">/mês</span></div>
             </div>
 
             <button id="btn-matricula-checkout" class="btn-checkout">Quero me Matricular —></button>
 
-            <div style="margin-top: 20px; border-top: 1px solid #22314d; padding-top: 15px; font-size: 13px; color: #aaa; line-height: 1.8;">
+            <div style="margin-top: 20px; border-top: 1px solid #22314d; padding-top: 15px; font-size: 13px; color: #cbd5e1; line-height: 1.8;">
                 <div>✓ Sem taxa de matrícula</div>
                 <div>✓ Foco prático com simuladores de e-commerce</div>
                 <div>✓ Acesso completo aos Labs com Inteligência Artificial</div>
@@ -112,6 +111,35 @@
         </div>
 
     </main>
+
+    <section class="lead-section" id="cadastro">
+        <div class="lead-container">
+            <div class="lead-text">
+                <h2 style="color: #ffffff; border-left: 4px solid #e11d48; padding-left: 15px; margin-top: 0;">Deseja receber novidades sobre as turmas?</h2>
+                <p>Fique por dentro das vagas abertas, atualizações de mercado e receba em primeira mão cronogramas completos e cupons de desconto.</p>
+            </div>
+            <div class="lead-form-box">
+                <h3 style="color: #ffffff; margin-top: 0; margin-bottom: 15px;">Receba Nossa Grade Curricular</h3>
+                <form id="form-lead">
+                    <div class="form-group">
+                        <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="E-mail Corporativo" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="interesse" name="interesse" required>
+                            <option value="ga4" selected>Google Analytics 4</option>
+                            <option value="analytics_gestao">Analytics para Gestão</option>
+                            <option value="gtm">Google Tag Manager</option>
+                            <option value="bigquery">BigQuery & SQL</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">Quero Receber a Grade</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <footer class="main-footer">
         <p>&copy; 2026 Meu Analytics Labs. Todos os direitos reservados. Protótipo educacional para portfólio de Web Analytics.</p>
