@@ -1,85 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de Cursos | Vitrine Oficial</title>
-    <link rel="stylesheet" href="https://unpkg.com/@mvpcss/mvp">
-    <style>
-        .grid-catalogo {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        .card-catalogo {
-            flex: 1 1 280px;
-            max-width: 320px;
-            border: 1px solid #e0e0e0;
-            padding: 20px;
-            border-radius: 8px;
-        }
-    </style>
+    <title>Vitrine de Cursos | Meu Analytics Labs</title>
+    <link rel="stylesheet" href="https://meuanalytics.com.br/style.css">
 </head>
 <body>
 
-    <header>
-        <nav>
-            <a href="https://meuanalytics.com.br">🏠 Voltar para a Home</a>
-            <a href="#"><b>📚 Catálogo de Cursos</b></a>
-        </nav>
-        <h1>Catálogo Completo de Especializações</h1>
-        <p>Você está no subdomínio <code>cursos.meuanalytics.com.br</code>. Explore nossa vitrine de produtos abaixo.</p>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="logo-accent">MEU</span> ANALYTICS <span class="logo-sub">LABS</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="https://meuanalytics.com.br">Home</a>
+                <a href="#" class="active">Nossos Cursos</a>
+                <a href="https://meuanalytics.com.br#ingresso">Formas de Ingresso</a>
+                <a href="https://meuanalytics.com.br#cadastro" class="btn-nav">Matricule-se</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <hr>
+    <main class="container">
+        <h1 style="font-size: 2.2rem; font-weight: 800; color: #0f172a; margin-bottom: 10px;">Catálogo Completo de Especializações</h1>
+        <p style="color: #64748b; font-size: 1.1rem; margin-bottom: 40px;">Explore nossa vitrine de produtos e escolha sua trilha de especialização em Web Analytics.</p>
 
-        <section>
-            <div class="grid-catalogo">
-                
-                <aside class="card-catalogo">
-                    <h3>Digital Analytics</h3>
-                    <p>Preço: <b>R$ 199,90</b></p>
-                    <p>Aprenda os conceitos fundamentais para se destacar na cultura de dados.</p>
-                    <a href="curso-digital-analytics.html"><button class="btn-catalogo" data-nome="Digital Analytics" data-id="DA-01" data-preco="199.90">Ver Página de Vendas</button></a>
-                </aside>
+        <h2 class="section-title">Vitrine de Cursos</h2>
+        
+        <div class="courses-grid">
+            <article class="course-card" data-id="analytics_gestao" data-name="Analytics para Gestão" data-price="89.90">
+                <div class="card-icon blue"><span class="icon-placeholder">📊</span></div>
+                <h3>Analytics para Gestão</h3>
+                <p>Domine métricas e indicadores de negócios para tomadas de decisão estratégicas e eficientes.</p>
+                <button class="btn-card" onclick="alert('Simulação: Abrindo Página de Vendas do Curso Analytics para Gestão')">Página de Vendas</button>
+            </article>
 
-                <aside class="card-catalogo">
-                    <h3>Google Analytics 4 (GA4)</h3>
-                    <p>Preço: <b>R$ 299,90</b></p>
-                    <p>Configurações avançadas, auditoria de tags e relatórios personalizados.</p>
-                    <a href="curso-ga4.html"><button class="btn-catalogo" data-nome="GA4" data-id="GA4-02" data-preco="299.90">Ver Página de Vendas</button></a>
-                </aside>
+            <article class="course-card" data-id="ga4" data-name="Google Analytics 4" data-price="89.90">
+                <div class="card-icon orange"><span class="icon-placeholder">📈</span></div>
+                <h3>Google Analytics 4</h3>
+                <p>Aprenda a configurar, coletar e extrair relatórios avançados na ferramenta oficial do mercado.</p>
+                <button class="btn-card" onclick="alert('Simulação: Abrindo Página de Vendas do Curso Google Analytics 4')">Página de Vendas</button>
+            </article>
 
-                <aside class="card-catalogo">
-                    <h3>Google Tag Manager (GTM)</h3>
-                    <p>Preço: <b>R$ 249,90</b></p>
-                    <p>Domine a camada de dados (Data Layer) e gerencie tags de forma profissional.</p>
-                    <a href="curso-gtm.html"><button class="btn-catalogo" data-nome="GTM" data-id="GTM-03" data-preco="249.90">Ver Página de Vendas</button></a>
-                </aside>
+            <article class="course-card" data-id="gtm" data-name="Google Tag Manager" data-price="89.90">
+                <div class="card-icon cyan"><span class="icon-placeholder">🏷️</span></div>
+                <h3>Google Tag Manager</h3>
+                <p>Instale tags, pixels de conversão e eventos customizados sem depender de desenvolvedores.</p>
+                <button class="btn-card" onclick="alert('Simulação: Abrindo Página de Vendas do Curso Google Tag Manager')">Página de Vendas</button>
+            </article>
 
-                <aside class="card-catalogo">
-                    <h3>Google BigQuery</h3>
-                    <p>Preço: <b>R$ 349,90</b></p>
-                    <p>Extraia valor dos dados brutos do GA4 utilizando o poder do SQL.</p>
-                    <a href="curso-bigquery.html"><button class="btn-catalogo" data-nome="BigQuery" data-id="BQ-04" data-preco="349.90">Ver Página de Vendas</button></a>
-                </aside>
+            <article class="course-card" data-id="bigquery" data-name="BigQuery & SQL" data-price="89.90">
+                <div class="card-icon blue"><span class="icon-placeholder">🔍</span></div>
+                <h3>BigQuery & SQL</h3>
+                <p>Manipule grandes volumes de dados de acesso e crie consultas poderosas utilizando SQL estruturado.</p>
+                <button class="btn-card" onclick="alert('Simulação: Abrindo Página de Vendas do Curso BigQuery & SQL')">Página de Vendas</button>
+            </article>
 
-                <aside class="card-catalogo">
-                    <h3>Looker Studio</h3>
-                    <p>Preço: <b>R$ 199,90</b></p>
-                    <p>Crie dashboards dinâmicos conectados diretamente ao data warehouse.</p>
-                    <a href="curso-looker-studio.html"><button class="btn-catalogo" data-nome="Looker Studio" data-id="LS-05" data-preco="199.90">Ver Página de Vendas</button></a>
-                </aside>
-
-            </div>
-        </section>
-
+            <article class="course-card" data-id="looker" data-name="Looker Studio" data-price="89.90">
+                <div class="card-icon orange"><span class="icon-placeholder">🎨</span></div>
+                <h3>Looker Studio</h3>
+                <p>Construa dashboards interativos e relatórios visuais impactantes para encantar seus clientes.</p>
+                <button class="btn-card" onclick="alert('Simulação: Abrindo Página de Vendas do Curso Looker Studio')">Página de Vendas</button>
+            </article>
+        </div>
     </main>
 
-    <footer>
-        <p><small>© 2026 Meu Analytics Cursos. Vitrine de produtos estruturada para mapeamento de e-commerce no GA4.</small></p>
+    <footer class="main-footer" style="margin-top: 60px;">
+        <p>&copy; 2026 Meu Analytics Labs. Vitrine de produtos estruturada para mapeamento de e-commerce no GA4.</p>
     </footer>
 
 </body>
