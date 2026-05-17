@@ -3,16 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curso Google Analytics 4 (GA4) - Meu Analytics Labs</title>
+    <title>Google Analytics 4 - Meu Analytics Labs</title>
     <link rel="stylesheet" href="https://meuanalytics.com.br/style.css">
     <style>
-        .pdp-container { display: flex; flex-wrap: wrap; max-width: 1200px; margin: 40px auto; padding: 0 20px; gap: 40px; }
-        .pdp-content { flex: 2; min-width: 300px; }
-        .pdp-sidebar { flex: 1; min-width: 300px; background: #111c2e; padding: 30px; border-radius: 8px; border: 1px solid #ff2a43; box-shadow: 0 4px 15px rgba(0,0,0,0.3); height: fit-content; position: sticky; top: 20px; }
-        .price-tag { font-size: 36px; color: #ff2a43; font-weight: bold; margin: 15px 0; }
-        .btn-checkout { display: block; width: 100%; text-align: center; background: #ff2a43; color: #fff; padding: 15px; border: none; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 18px; transition: 0.3s; cursor: pointer; }
+        .pdp-wrapper { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 30px; }
+        .pdp-main { flex: 2; min-width: 300px; }
+        .pdp-sidebar { flex: 1; min-width: 300px; background: #111c2e; padding: 25px; border-radius: 8px; border: 1px solid #ff2a43; height: fit-content; position: sticky; top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        
+        .pdp-nav { display: flex; border-bottom: 2px solid #22314d; margin-bottom: 30px; gap: 20px; padding-bottom: 10px; }
+        .pdp-nav a { color: #aaa; text-decoration: none; font-weight: bold; font-size: 15px; }
+        .pdp-nav a.active { color: #ff2a43; border-bottom: 2px solid #ff2a43; padding-bottom: 10px; margin-bottom: -12px; }
+
+        .badge-tag { background: rgba(255, 42, 67, 0.1); color: #ff2a43; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
+        
+        details.accordion-item summary { padding: 18px; font-weight: bold; background: #16243d; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; border: 1px solid #22314d; border-radius: 6px; margin-bottom: 12px; }
+        details.accordion-item summary::-webkit-details-marker { display: none; }
+        details.accordion-item summary::after { content: '▼'; font-size: 12px; color: #ff2a43; }
+        details.accordion-item[open] summary::after { content: '▲'; }
+        .grid-disciplinas { padding: 15px; background: #111c2e; border: 1px solid #22314d; border-top: none; margin-top: -14px; margin-bottom: 12px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; }
+        .disciplina-row { padding: 10px; border-bottom: 1px solid #22314d; font-size: 14px; display: flex; justify-content: space-between; }
+        
+        .price-box { margin: 20px 0; }
+        .old-price { text-decoration: line-through; color: #777; font-size: 14px; }
+        .current-price { font-size: 38px; color: #ff2a43; font-weight: bold; }
+        .btn-checkout { display: block; width: 100%; text-align: center; background: #ff2a43; color: #fff; padding: 16px; border: none; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 18px; transition: 0.3s; cursor: pointer; margin-top: 15px; }
         .btn-checkout:hover { background: #cc1b30; }
-        .badge-ia { background: rgba(255, 42, 67, 0.1); color: #ff2a43; padding: 5px 10px; border-radius: 4px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
     </style>
 </head>
 <body>
@@ -28,38 +43,72 @@
         </div>
     </header>
 
-    <main class="pdp-container" id="product-page" data-item-id="CURSO-002" data-item-name="Google Analytics 4" data-item-category="Web Analytics" data-price="89.90">
+    <main class="pdp-wrapper" id="product-page" data-item-id="CURSO-002" data-item-name="Google Analytics 4" data-item-category="Web Analytics" data-price="89.90">
         
-        <div class="pdp-content">
-            <span class="badge-ia">TECNÓLOGO • INÍCIO IMEDIATO</span>
-            <h1>Google Analytics 4 (GA4)</h1>
-            <p class="subtitle">Aprenda a planejar, configurar, coletar e extrair relatórios customizados avançados na ferramenta líder do mercado global.</p>
-            
-            <h2>Domine a Interface e os Dados do Google Analytics 4</h2>
-            <p>Esqueça os relatórios engessados. Neste laboratório prático, você vai aprender a auditar fluxos de dados de Web e Apps, configurar dimensões personalizadas e explorar a fundo o módulo de Explorações para gerar análises profundas de comportamento do usuário.</p>
-            
-            <h3>Módulos de Especialização:</h3>
-            <ul>
-                <li><strong>Arquitetura Baseada em Eventos:</strong> Entenda o modelo conceitual do GA4 de ponta a ponta.</li>
-                <li><strong>Rastreamento Avançado de Conversões:</strong> Mapeie compras, leads e interações sem amostragem.</li>
-                <li><strong>Audiências e Segmentação:</strong> Crie públicos-alvo preditivos baseados em machine learning para remarketing.</li>
-            </ul>
+        <div class="pdp-main">
+            <span class="badge-tag">TECNÓLOGO • 100% ONLINE • INÍCIO IMEDIATO</span>
+            <h1 style="margin-top: 0; font-size: 36px;">Google Analytics 4 (GA4)</h1>
+            <p class="subtitle" style="font-size: 18px; color: #aaa; margin-bottom: 30px;">Domine a ferramenta de auditoria e rastreamento oficial do mercado e extraia relatórios avançados sem amostragem.</p>
+
+            <div class="pdp-nav">
+                <a href="#sobre" class="active">Sobre o curso</a>
+                <a href="#grade">Grade curricular</a>
+            </div>
+
+            <section id="sobre" style="margin-bottom: 40px;">
+                <h2>Sobre a Graduação</h2>
+                <p>Este curso prático foca na coleta e análise de fluxos de dados multiplataforma (Web + App). O aluno aprenderá desde o planejamento do mapa de tags até a criação de funis de e-commerce e relatórios de exploração customizados, usando dados reais e simulados.</p>
+            </section>
+
+            <section id="grade" style="margin-bottom: 40px;">
+                <h2 style="margin-bottom: 20px;">Matriz Curricular</h2>
+                
+                <details class="accordion-item" open>
+                    <summary>1º Semestre — Arquitetura e Estrutura do GA4</summary>
+                    <div class="grid-disciplinas">
+                        <div class="disciplina-row"><span>Modelo Conceitual Baseado em Eventos</span> <span>80h</span></div>
+                        <div class="disciplina-row"><span>Configuração de Propriedades e Fluxos de Dados</span> <span>80h</span></div>
+                        <div class="disciplina-row"><span>Dimensões e Métricas Personalizadas</span> <span>60h</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion-item">
+                    <summary>2º Semestre — Rastreamento de Conversão Avançado</summary>
+                    <div class="grid-disciplinas">
+                        <div class="disciplina-row"><span>Configuração de Eventos de Conversão (Leads e Vendas)</span> <span>80h</span></div>
+                        <div class="disciplina-row"><span>Implementação de E-commerce Avançado</span> <span>80h</span></div>
+                        <div class="disciplina-row"><span>Modelos de Atribuição e Canais de Tráfego</span> <span>60h</span></div>
+                    </div>
+                </details>
+
+                <details class="accordion-item">
+                    <summary>3º Semestre — Exploração de Dados e Insights</summary>
+                    <div class="grid-disciplinas">
+                        <div class="disciplina-row"><span>Criação de Funis Customizados no Módulo Explorar</span> <span>80h</span></div>
+                        <div class="disciplina-row"><span>Análise de Retenção e Coorte de Usuários</span> <span>60h</span></div>
+                        <div class="disciplina-row"><span>Integração Nativa com o BigQuery</span> <span>100h</span></div>
+                    </div>
+                </details>
+            </section>
         </div>
 
         <div class="pdp-sidebar">
-            <p><strong>Desconto Selecionado:</strong></p>
-            <h3>Desconto Social</h3>
-            <p>Últimas vagas com este preço especial.</p>
+            <span style="font-size: 12px; letter-spacing: 1px; color: #ff2a43; font-weight: bold;">PLANO SELECIONADO</span>
+            <h3 style="margin: 5px 0 15px 0;">Desconto Social</h3>
+            <p style="font-size: 14px; color: #aaa; margin: 0;">Valor exclusivo para novos alunos matriculados nesta turma:</p>
             
-            <div class="price-tag">R$ 89,90<span style="font-size: 14px; color: #aaa; font-weight: normal;">/mês</span></div>
-            
-            <button id="btn-matricula-checkout" class="btn-checkout">Matricule-se agora —></button>
-            
-            <ul style="list-style: none; padding: 0; margin-top: 25px; font-size: 14px; line-height: 2;">
-                <li>✓ Início imediato</li>
-                <li>✓ Laboratórios práticos baseados em e-commerce real</li>
-                <li>✓ Formação Profissional em IA inclusa</li>
-            </ul>
+            <div class="price-box">
+                <div class="old-price">De R$ 199,90/mês</div>
+                <div class="current-price">R$ 89,90<span style="font-size: 14px; color: #aaa; font-weight: normal;">/mês</span></div>
+            </div>
+
+            <button id="btn-matricula-checkout" class="btn-checkout">Quero me Matricular —></button>
+
+            <div style="margin-top: 20px; border-top: 1px solid #22314d; padding-top: 15px; font-size: 13px; color: #aaa; line-height: 1.8;">
+                <div>✓ Sem taxa de matrícula</div>
+                <div>✓ Foco prático com simuladores de e-commerce</div>
+                <div>✓ Acesso completo aos Labs com Inteligência Artificial</div>
+            </div>
         </div>
 
     </main>
