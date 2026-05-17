@@ -16,11 +16,12 @@
                 </div>
             </a>
             <nav class="nav-menu">
-                <a href="https://cursos.meuanalytics.com.br/" class="active">Nossos Cursos</a>
+                <a href="https://cursos.meuanalytics.com.br/" class="active">Home</a>
+                <a href="https://cursos.meuanalytics.com.br/nossos-cursos/">Nossos Cursos</a>
                 <a href="#ingresso">Formas de Ingresso</a>
                 <a href="#sobre">Sobre Nós</a>
                 <a href="https://meuanalytics.com.br/login/" class="btn-login-nav">Entrar</a>
-                <a href="https://cursos.meuanalytics.com.br/" class="btn-nav">Matricule-se</a>
+                <a href="https://cursos.meuanalytics.com.br/nossos-cursos/" class="btn-nav">Matricule-se</a>
             </nav>
         </div>
     </header>
@@ -31,7 +32,7 @@
                 <h1>Acelere sua Carreira em <span class="highlight">Dados de Performance</span></h1>
                 <p>Domine as ferramentas mais exigidas pelo mercado de tecnologia de ponta a ponta. Aprenda instalando, coletando e modelando dados reais em ambientes controlados.</p>
                 <div class="hero-buttons">
-                    <a href="#cursos" class="btn-primary" id="btn-hero-cursos">Ver Nossos Cursos</a>
+                    <a href="https://cursos.meuanalytics.com.br/nossos-cursos/" class="btn-primary" id="btn-hero-cursos">Ver Nossos Cursos</a>
                 </div>
             </div>
             <div class="hero-badge-area">
@@ -50,26 +51,29 @@
         <div class="container">
             <h2 class="section-title">Nossos Cursos</h2>
             <div class="courses-grid">
-                <article class="course-card" data-id="analytics_gestao" data-name="Analytics para Gestão" data-price="89.90">
+                <article class="course-card">
                     <div class="card-icon blue"><span class="icon-placeholder">📊</span></div>
                     <h3>Analytics para Gestão</h3>
-                    <p>Graduação voltada para a estruturação de indicadores de performance, modelagem de dados de negócios e tomada de decisão estratégica corporativa.</p>
-                    <a href="./analytics-gestao/" class="btn-card">Conhecer Curso</a>
+                    <p>Domine métricas e indicadores de negócios para tomadas de decisão estratégicas e eficientes.</p>
+                    <a href="https://cursos.meuanalytics.com.br/analytics-gestao/" class="btn-card">Conhecer Curso</a>
                 </article>
 
-                <article class="course-card" data-id="ga4" data-name="Google Analytics 4" data-price="89.90">
+                <article class="course-card">
                     <div class="card-icon orange"><span class="icon-placeholder">📈</span></div>
-                    <h3>Google Analytics 4 (GA4)</h3>
-                    <p>Formação técnica focada na ferramenta oficial do mercado. Aprenda a monitorar fluxos de dados, criar dimensões personalizadas e explorar relatórios.</p>
-                    <a href="./ga4/" class="btn-card">Conhecer Curso</a>
+                    <h3>Google Analytics 4</h3>
+                    <p>Aprenda a configurar, coletar e extrair relatórios avançados na ferramenta oficial do mercado.</p>
+                    <a href="https://cursos.meuanalytics.com.br/ga4/" class="btn-card">Conhecer Curso</a>
                 </article>
 
-                <article class="course-card" data-id="gtm" data-name="Google Tag Manager" data-price="89.90">
+                <article class="course-card">
                     <div class="card-icon cyan"><span class="icon-placeholder">🏷️</span></div>
-                    <h3>Google Tag Manager (GTM)</h3>
-                    <p>Domine a injeção de tags, configuração de acionadores de rastreamento avançados e manipulação de dataLayer sem depender de desenvolvedores.</p>
-                    <a href="./gtm/" class="btn-card">Conhecer Curso</a>
+                    <h3>Google Tag Manager</h3>
+                    <p>Instale tags, pixels de conversão e eventos customizados sem depender de desenvolvedores.</p>
+                    <a href="https://cursos.meuanalytics.com.br/gtm/" class="btn-card">Conhecer Curso</a>
                 </article>
+            </div>
+            <div class="view-all-wrapper">
+                <a href="https://cursos.meuanalytics.com.br/nossos-cursos/" class="view-all-link">★ Ver todos os cursos da grade</a>
             </div>
         </div>
     </section>
@@ -107,9 +111,40 @@
         </div>
     </section>
 
+    <section class="lead-section" id="cadastro">
+        <div class="lead-container">
+            <div class="lead-text">
+                <h2 style="color: #ffffff; border-left-color: #e11d48; margin-top: 0;">Deseja receber novidades sobre as turmas?</h2>
+                <p>Fique por dentro das vagas abertas, atualizações de mercado e receba em primeira mão cronogramas completos e cupons de desconto para os laboratórios avançados.</p>
+            </div>
+            <div class="lead-form-box">
+                <h3 style="color: #ffffff; margin-top: 0; margin-bottom: 15px;">Receba Nossa Grade Curricular</h3>
+                <form id="form-lead">
+                    <div class="form-group">
+                        <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="E-mail Corporativo" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="interesse" name="interesse" required>
+                            <option value="" disabled selected>Curso de Maior Interesse</option>
+                            <option value="analytics_gestao">Analytics para Gestão</option>
+                            <option value="ga4">Google Analytics 4</option>
+                            <option value="gtm">Google Tag Manager</option>
+                            <option value="bigquery">BigQuery & SQL</option>
+                            <option value="looker">Looker Studio</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit">Quero Receber a Grade</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <footer class="main-footer">
-        <p>&copy; 2026 Meu Analytics Labs. Vitrine de produtos estruturada para mapeamento de e-commerce no GA4.</p>
-    </footer>
+        <p>&copy; 2026 Meu Analytics Labs. Desenvolvido para portfólio de engenharia e arquitetura de Web Analytics.</p>
+    </section>
 
 </body>
 </html>
