@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Analytics 4 - Meu Analytics Labs</title>
+    <link backing="stylesheet" href="https://meuanalytics.com.br/style.css">
     <link rel="stylesheet" href="https://meuanalytics.com.br/style.css">
     
     <style>
@@ -28,8 +29,13 @@
         .disciplina-row span { color: #e2e8f0 !important; }
         .disciplina-row span:last-child { color: #ff2a43 !important; font-weight: bold; }
         
-        .price-box { margin: 20px 0; }
-        .current-price { font-size: 38px; color: #ff2a43 !important; font-weight: bold; }
+        .coupon-toggle-container { background: #16243d; padding: 15px; border-radius: 6px; margin: 15px 0; border: 1px solid #22314d; }
+        .coupon-option { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; cursor: pointer; color: #ffffff; font-size: 14px; }
+        .coupon-option:last-child { margin-bottom: 0; }
+        .coupon-option input { accent-color: #ff2a43; width: 16px; height: 16px; }
+        
+        .price-box { margin: 15px 0; }
+        .current-price { font-size: 34px; color: #ff2a43 !important; font-weight: bold; }
         .btn-checkout { display: block; width: 100%; text-align: center; background: #ff2a43; color: #fff !important; padding: 16px; border: none; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 18px; transition: 0.3s; cursor: pointer; margin-top: 15px; }
         .btn-checkout:hover { background: #cc1b30; }
     </style>
@@ -39,9 +45,7 @@
     <header class="main-header">
         <div class="header-container">
             <a href="https://meuanalytics.com.br/" style="text-decoration: none;">
-                <div class="logo">
-                    <span class="logo-accent">MEU</span> ANALYTICS <span class="logo-sub">LABS</span>
-                </div>
+                <div class="logo"><span class="logo-accent">MEU</span> ANALYTICS <span class="logo-sub">LABS</span></div>
             </a>
             <nav class="nav-menu">
                 <a href="https://meuanalytics.com.br/">Home</a>
@@ -54,8 +58,7 @@
         </div>
     </header>
 
-    <main class="pdp-wrapper" id="product-page" data-item-id="CURSO-002" data-item-name="Google Analytics 4" data-item-category="Web Analytics" data-price="89.90">
-        
+    <main class="pdp-wrapper" id="product-page">
         <div class="pdp-main">
             <span class="badge-tag">TECNÓLOGO • 100% ONLINE • INÍCIO IMEDIATO</span>
             <h1 style="margin-top: 0; font-size: 36px; color: #0f172a; margin-bottom: 20px;">Google Analytics 4 (GA4)</h1>
@@ -68,89 +71,67 @@
 
             <section id="grade" style="margin-bottom: 40px;">
                 <h2 style="color: #0f172a; margin-bottom: 20px;">Matriz Curricular</h2>
-                
                 <details class="accordion-item" open>
                     <summary>1º Semestre — Arquitetura e Estrutura do GA4</summary>
                     <div class="grid-disciplinas">
                         <div class="disciplina-row"><span>Modelo Conceitual Baseado em Eventos</span> <span>80h</span></div>
                         <div class="disciplina-row"><span>Configuração de Propriedades e Fluxos de Dados</span> <span>80h</span></div>
-                        <div class="disciplina-row"><span>Dimensões e Métricas Personalizadas</span> <span>60h</span></div>
-                    </div>
-                </details>
-
-                <details class="accordion-item">
-                    <summary>2º Semestre — Rastreamento de Conversão Avançado</summary>
-                    <div class="grid-disciplinas">
-                        <div class="disciplina-row"><span>Configuração de Eventos de Conversão (Leads e Vendas)</span> <span>80h</span></div>
-                        <div class="disciplina-row"><span>Implementação de E-commerce Avançado</span> <span>80h</span></div>
-                        <div class="disciplina-row"><span>Modelos de Atribuição e Canais de Tráfego</span> <span>60h</span></div>
-                    </div>
-                </details>
-
-                <details class="accordion-item">
-                    <summary>3º Semestre — Exploração de Dados e Insights</summary>
-                    <div class="grid-disciplinas">
-                        <div class="disciplina-row"><span>Criação de Funis Customizados no Módulo Explorar</span> <span>80h</span></div>
-                        <div class="disciplina-row"><span>Análise de Retenção e Coorte de Usuários</span> <span>60h</span></div>
-                        <div class="disciplina-row"><span>Integração Nativa com o BigQuery</span> <span>100h</span></div>
                     </div>
                 </details>
             </section>
         </div>
 
         <div class="pdp-sidebar">
-            <span>PLANO SELECIONADO</span>
-            <h3>Desconto Social</h3>
-            <p>Valor exclusivo para novos alunos matriculados nesta turma:</p>
+            <span>INVESTIMENTO</span>
+            <h3>Escolha seu benefício:</h3>
+            
+            <div class="coupon-toggle-container">
+                <label class="coupon-option">
+                    <input type="radio" name="coupon-selection" value="DESCONTOSOCIAL" checked onchange="updatePrice('DESCONTOSOCIAL')">
+                    <div>
+                        <strong>Desconto Social</strong><br>
+                        <span style="font-size: 12px; color: #94a3b8;">Disponível para novos alunos</span>
+                    </div>
+                </label>
+                <label class="coupon-option" style="margin-top: 12px;">
+                    <input type="radio" name="coupon-selection" value="EXALUNO" onchange="updatePrice('EXALUNO')">
+                    <div>
+                        <strong>Já sou Ex-Aluno</strong><br>
+                        <span style="font-size: 12px; color: #94a3b8;">Desconto fidelidade Labs</span>
+                    </div>
+                </label>
+            </div>
             
             <div class="price-box">
-                <div style="text-decoration: line-through; color: #94a3b8; font-size: 14px; margin-bottom: 5px;">De R$ 199,90/mês</div>
-                <div class="current-price">R$ 89,90<span style="font-size: 14px; color: #94a3b8; font-weight: normal;">/mês</span></div>
+                <div style="text-decoration: line-through; color: #94a3b8; font-size: 14px; margin-bottom: 5px;">Preço regular: R$ 600,00</div>
+                <div class="current-price" id="displayed-price">6x de R$ 89,90</div>
+                <div style="font-size: 12px; color: #94a3b8; margin-top: 5px;" id="displayed-subtext">ou à vista por R$ 539,40</div>
             </div>
 
-            <a href="https://meuanalytics.com.br/carrinho/?curso=ga4" class="btn-checkout" style="text-decoration: none;">Quero me Matricular —></a>
-
-            <div style="margin-top: 20px; border-top: 1px solid #22314d; padding-top: 15px; font-size: 13px; color: #cbd5e1; line-height: 1.8;">
-                <div>✓ Sem taxa de matrícula</div>
-                <div>✓ Foco prático com simuladores de e-commerce</div>
-                <div>✓ Acesso completo aos Labs com Inteligência Artificial</div>
-            </div>
+            <a href="https://meuanalytics.com.br/carrinho/?curso=ga4&cupom=DESCONTOSOCIAL" id="btn-buy-course" class="btn-checkout" style="text-decoration: none;">Quero me Matricular —></a>
         </div>
-
     </main>
 
-    <section class="lead-section" id="cadastro">
-        <div class="lead-container">
-            <div class="lead-text">
-                <h2 style="color: #ffffff; border-left: 4px solid #e11d48; padding-left: 15px; margin-top: 0;">Deseja receber novidades sobre as turmas?</h2>
-                <p>Fique por dentro das vagas abertas, atualizações de mercado e receba em primeira mão cronogramas completos e cupons de desconto.</p>
-            </div>
-            <div class="lead-form-box">
-                <h3 style="color: #ffffff; margin-top: 0; margin-bottom: 15px;">Receba Nossa Grade Curricular</h3>
-                <form id="form-lead">
-                    <div class="form-group">
-                        <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="E-mail Corporativo" required>
-                    </div>
-                    <div class="form-group">
-                        <select id="interesse" name="interesse" required>
-                            <option value="ga4" selected>Google Analytics 4</option>
-                            <option value="analytics_gestao">Analytics para Gestão</option>
-                            <option value="gtm">Google Tag Manager</option>
-                            <option value="bigquery">BigQuery & SQL</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn-submit">Quero Receber a Grade</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <footer class="main-footer">
-        <p>&copy; 2026 Meu Analytics Labs. Todos os direitos reservados. Protótipo educacional para portfólio de Web Analytics.</p>
+        <p>&copy; 2026 Meu Analytics Labs. Todos os direitos reservados.</p>
     </footer>
 
+    <script>
+        function updatePrice(coupon) {
+            const priceText = document.getElementById('displayed-price');
+            const subtext = document.getElementById('displayed-subtext');
+            const buyBtn = document.getElementById('btn-buy-course');
+            
+            if (coupon === 'EXALUNO') {
+                priceText.innerText = "6x de R$ 84,90";
+                subtext.innerText = "ou à vista por R$ 509,40";
+                buyBtn.href = "https://meuanalytics.com.br/carrinho/?curso=ga4&cupom=EXALUNO";
+            } else {
+                priceText.innerText = "6x de R$ 89,90";
+                subtext.innerText = "ou à vista por R$ 539,40";
+                buyBtn.href = "https://meuanalytics.com.br/carrinho/?curso=ga4&cupom=DESCONTOSOCIAL";
+            }
+        }
+    </script>
 </body>
 </html>
