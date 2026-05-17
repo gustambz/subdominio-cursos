@@ -3,60 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vitrine de Cursos | Meu Analytics Labs</title>
+    <title>Meu Analytics Labs | Formação de Alta Performance</title>
     <link rel="stylesheet" href="https://meuanalytics.com.br/style.css">
 </head>
 <body>
 
     <header class="main-header">
         <div class="header-container">
-            <a href="https://meuanalytics.com.br/" style="text-decoration: none;">
+            <a href="https://cursos.meuanalytics.com.br/" style="text-decoration: none;">
                 <div class="logo">
                     <span class="logo-accent">MEU</span> ANALYTICS <span class="logo-sub">LABS</span>
                 </div>
             </a>
             <nav class="nav-menu">
-                <a href="https://meuanalytics.com.br/">Home</a>
-                <a href="#" class="active">Nossos Cursos</a>
-                <a href="https://meuanalytics.com.br/#ingresso">Formas de Ingresso</a>
-                
+                <a href="https://cursos.meuanalytics.com.br/" class="active">Nossos Cursos</a>
+                <a href="#ingresso">Formas de Ingresso</a>
+                <a href="#sobre">Sobre Nós</a>
                 <a href="https://meuanalytics.com.br/login/" class="btn-login-nav">Entrar</a>
                 <a href="https://cursos.meuanalytics.com.br/" class="btn-nav">Matricule-se</a>
             </nav>
         </div>
     </header>
 
-    <main class="container">
-        <h1 style="font-size: 2.2rem; font-weight: 800; color: #0f172a; margin-bottom: 10px;">Catálogo Completo de Especializações</h1>
-        <p style="color: #64748b; font-size: 1.1rem; margin-bottom: 40px;">Explore nossa vitrine de produtos e escolha sua trilha de especialização em Web Analytics.</p>
-
-        <h2 class="section-title">Vitrine de Cursos</h2>
-        
-        <div class="courses-grid">
-            <article class="course-card" data-id="analytics_gestao" data-name="Analytics para Gestão" data-price="89.90">
-                <div class="card-icon blue"><span class="icon-placeholder">📊</span></div>
-                <h3>Analytics para Gestão</h3>
-                <p>Graduação voltada para a estruturação de indicadores de performance, modelagem de dados de negócios e tomada de decisão estratégica corporativa.</p>
-                <a href="./analytics-gestao/" class="btn-card">Conhecer Curso</a>
-            </article>
-
-            <article class="course-card" data-id="ga4" data-name="Google Analytics 4" data-price="89.90">
-                <div class="card-icon orange"><span class="icon-placeholder">📈</span></div>
-                <h3>Google Analytics 4 (GA4)</h3>
-                <p>Formação técnica focada na ferramenta oficial do mercado. Aprenda a monitorar fluxos de dados, criar dimensões personalizadas e explorar relatórios.</p>
-                <a href="./ga4/" class="btn-card">Conhecer Curso</a>
-            </article>
-
-            <article class="course-card" data-id="gtm" data-name="Google Tag Manager" data-price="89.90">
-                <div class="card-icon cyan"><span class="icon-placeholder">🏷️</span></div>
-                <h3>Google Tag Manager (GTM)</h3>
-                <p>Domine a injeção de tags, configuração de acionadores de rastreamento avançados e manipulação de dataLayer sem depender de desenvolvedores.</p>
-                <a href="./gtm/" class="btn-card">Conhecer Curso</a>
-            </article>
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Acelere sua Carreira em <span class="highlight">Dados de Performance</span></h1>
+                <p>Domine as ferramentas mais exigidas pelo mercado de tecnologia de ponta a ponta. Aprenda instalando, coletando e modelando dados reais em ambientes controlados.</p>
+                <div class="hero-buttons">
+                    <a href="#cursos" class="btn-primary" id="btn-hero-cursos">Ver Nossos Cursos</a>
+                </div>
+            </div>
+            <div class="hero-badge-area">
+                <div class="hero-mock-image">
+                    <div class="chart-line"></div>
+                    <div class="chart-bar"></div>
+                </div>
+            </div>
         </div>
-    </main>
+        <div class="promo-bar">
+            Matricule-se hoje e receba grátis 2 cursos de IA: Engenharia de Prompt e Criação de Agentes Inteligentes!
+        </div>
+    </section>
 
-    <footer class="main-footer" style="margin-top: 60px;">
+    <section class="courses-preview" id="cursos">
+        <div class="container">
+            <h2 class="section-title">Nossos Cursos</h2>
+            <div class="courses-grid">
+                <article class="course-card" data-id="analytics_gestao" data-name="Analytics para Gestão" data-price="89.90">
+                    <div class="card-icon blue"><span class="icon-placeholder">📊</span></div>
+                    <h3>Analytics para Gestão</h3>
+                    <p>Graduação voltada para a estruturação de indicadores de performance, modelagem de dados de negócios e tomada de decisão estratégica corporativa.</p>
+                    <a href="./analytics-gestao/" class="btn-card">Conhecer Curso</a>
+                </article>
+
+                <article class="course-card" data-id="ga4" data-name="Google Analytics 4" data-price="89.90">
+                    <div class="card-icon orange"><span class="icon-placeholder">📈</span></div>
+                    <h3>Google Analytics 4 (GA4)</h3>
+                    <p>Formação técnica focada na ferramenta oficial do mercado. Aprenda a monitorar fluxos de dados, criar dimensões personalizadas e explorar relatórios.</p>
+                    <a href="./ga4/" class="btn-card">Conhecer Curso</a>
+                </article>
+
+                <article class="course-card" data-id="gtm" data-name="Google Tag Manager" data-price="89.90">
+                    <div class="card-icon cyan"><span class="icon-placeholder">🏷️</span></div>
+                    <h3>Google Tag Manager (GTM)</h3>
+                    <p>Domine a injeção de tags, configuração de acionadores de rastreamento avançados e manipulação de dataLayer sem depender de desenvolvedores.</p>
+                    <a href="./gtm/" class="btn-card">Conhecer Curso</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="ingresso-section" id="ingresso">
+        <div class="container">
+            <h2 class="section-title">Formas de Ingresso</h2>
+            <div class="ingresso-grid">
+                <div class="ingresso-card">
+                    <h3>ENEM</h3>
+                    <p>Use sua nota do ENEM para ingressar com bolsas de estudo parciais ou integrais na formação.</p>
+                    <a href="https://meuanalytics.com.br/edital-enem.pdf" download="Edital_ENEM_AnalyticsLabs.pdf" class="btn-ingresso" style="text-decoration: none;">Baixar Edital PDF</a>
+                </div>
+                <div class="ingresso-card">
+                    <h3>Vestibular Simplificado</h3>
+                    <p>Realize nossa redação online avaliada por inteligência artificial e garanta seu acesso imediato.</p>
+                    <a href="https://meuanalytics.com.br/edital-vestibular.pdf" download="Edital_Vestibular_AnalyticsLabs.pdf" class="btn-ingresso" style="text-decoration: none;">Baixar Edital PDF</a>
+                </div>
+                <div class="ingresso-card">
+                    <h3>ENCCEJA Estudo</h3>
+                    <p>Programa exclusivo de incentivo para portadores de certificado ENCCEJA com descontos especiais.</p>
+                    <a href="https://meuanalytics.com.br/edital-encceja.pdf" download="Edital_ENCCEJA_AnalyticsLabs.pdf" class="btn-ingresso" style="text-decoration: none;">Baixar Edital PDF</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="sobre">
+        <div class="container narrow">
+            <h2 class="section-title">Conheça o Projeto Labs</h2>
+            <p style="text-align: center; margin-bottom: 20px;">Assista ao vídeo explicativo abaixo para entender a arquitetura dos nossos laboratórios de dados e portfólio.</p>
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?enablejsapi=1" title="Vídeo de Apresentação" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
         <p>&copy; 2026 Meu Analytics Labs. Vitrine de produtos estruturada para mapeamento de e-commerce no GA4.</p>
     </footer>
 
