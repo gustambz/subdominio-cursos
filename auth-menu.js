@@ -1,9 +1,9 @@
-// Configurações do Supabase (Mesma credencial usada no Login)
+// Configurações do Supabase
 const SUPABASE_URL = "https://lcslqpdoidgteihcxjqr.supabase.co";
 const SUPABASE_KEY = "sb_publishable_WnJunLw2RbK4yVjkN2r8IA_j_NWO3El";
 const COOKIE_DOMAIN = ".meuanalytics.com.br";
 
-// Inicializa o cliente do Supabase com a estratégia de Cookie unificado
+// Inicializa o cliente do Supabase
 const supabaseOptions = {
     auth: {
         persistSession: true,
@@ -29,47 +29,55 @@ const supabaseOptions = {
 
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY, supabaseOptions);
 
-// Função que gerencia o comportamento visual do cabeçalho
+// Gerencia o cabeçalho
 document.addEventListener("DOMContentLoaded", () => {
     supabaseClient.auth.getSession().then(({ data: { session } }) => {
         const navLinks = document.querySelector(".nav-links");
         if (!navLinks) return;
 
         if (session && session.user) {
-            console.log("Supabase: Usuário identificado na carga inicial ->", session.user.id);
-            
-            // O usuário está logado! Vamos remover o botão "Entrar" e injetar o Avatar + Botão Sair
+            // Remove o botão "Entrar" original
             const btnLogin = navLinks.querySelector(".btn-login");
             if (btnLogin) btnLogin.remove();
 
-            // Cria o HTML do Avatar (Inicial do e-mail) + Botão Sair
+            // Cria o menu de perfil com dropdown
             const userEmail = session.user.email || "U";
             const userLetter = userEmail.charAt(0).toUpperCase();
 
-            const loggedMenu = document.createElement("div");
-            loggedMenu.style.display = "flex";
-            loggedMenu.style.alignItems = "center";
-            loggedMenu.style.gap = "15px";
-            loggedMenu.innerHTML = `
-                <div class="user-avatar" style="width: 35px; height: 35px; background-color: #e11d48; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.95rem;" title="${userEmail}">
+            const profileContainer = document.createElement("div");
+            profileContainer.style.position = "relative";
+            profileContainer.style.marginLeft = "15px";
+            profileContainer.innerHTML = `
+                <div id="avatar-trigger" style="width: 38px; height: 38px; background-color: #ff2a43; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; cursor: pointer; border: 2px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1);" title="${userEmail}">
                     ${userLetter}
                 </div>
-                <button id="btn-logout" style="background: none; border: 1px solid #cbd5e1; color: #64748b; padding: 6px 12px; border-radius: 4px; cursor: pointer; font-weight: 500; font-size: 0.85rem; transition: all 0.2s;">
-                    Sair
-                </button>
+                <div id="user-dropdown" style="display: none; position: absolute; right: 0; top: 45px; background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px; box-shadow: 0 10px 15px rgba(0,0,0,0.1); width: 100px; z-index: 1000;">
+                    <button id="btn-logout" style="width: 100%; background: none; border: none; color: #1e293b; cursor: pointer; font-size: 14px; text-align: left; padding: 5px;">
+                        Sair
+                    </button>
+                </div>
             `;
+            navLinks.appendChild(profileContainer);
 
-            navLinks.appendChild(loggedMenu);
-
-            // Adiciona o evento de clique no botão Sair (Logout)
-            document.getElementById("btn-logout").addEventListener("click", async () => {
-                await supabaseClient.auth.signOut();
-                console.log("Supabase: Sessão encerrada pelo usuário.");
-                window.location.reload(); // Recarrega a página para voltar ao estado anônimo
+            // Evento para abrir/fechar o dropdown
+            document.getElementById("avatar-trigger").addEventListener("click", (e) => {
+                e.stopPropagation();
+                const dropdown = document.getElementById("user-dropdown");
+                dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
             });
 
-        } else {
-            console.log("Supabase: Usuário Anônimo na carga inicial.");
+            // Fecha o dropdown ao clicar em qualquer lugar da tela
+            document.addEventListener("click", () => {
+                const dropdown = document.getElementById("user-dropdown");
+                if (dropdown) dropdown.style.display = "none";
+            });
+
+            // Evento de Logout
+            document.getElementById("btn-logout").addEventListener("click", async () => {
+                await supabaseClient.auth.signOut();
+                window.location.reload();
+            });
+
         }
     });
 });
