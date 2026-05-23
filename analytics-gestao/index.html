@@ -9,30 +9,23 @@
     <style>
         .pdp-wrapper { max-width: 1200px; margin: 30px auto; padding: 0 20px; display: flex; flex-wrap: wrap; gap: 30px; color: #1e293b !important; }
         .pdp-main { flex: 2; min-width: 300px; }
-        
         .pdp-sidebar { flex: 1; min-width: 300px; background: #111c2e !important; padding: 25px; border-radius: 8px; border: 1px solid #ff2a43; height: fit-content; position: sticky; top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); color: #ffffff !important; }
         .pdp-sidebar span { color: #ff2a43 !important; font-weight: bold; }
         .pdp-sidebar h3 { color: #ffffff !important; font-size: 22px !important; margin: 10px 0 !important; font-weight: bold !important; display: block !important; }
         .pdp-sidebar p { color: #e2e8f0 !important; font-size: 14px !important; margin-bottom: 10px !important; }
         .pdp-sidebar div, .pdp-sidebar li { color: #ffffff !important; }
-        
         .badge-tag { background: rgba(255, 42, 67, 0.1); color: #ff2a43; padding: 6px 12px; border-radius: 4px; font-size: 12px; font-weight: bold; display: inline-block; margin-bottom: 15px; }
-        
         details.accordion-item summary { padding: 18px; font-weight: bold !important; background: #111c2e !important; color: #ffffff !important; cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; border: 1px solid #22314d; border-radius: 6px; margin-bottom: 12px; font-size: 16px !important; }
         details.accordion-item summary::-webkit-details-marker { display: none; }
         details.accordion-item summary::after { content: '▼'; font-size: 12px; color: #ff2a43; }
         details.accordion-item[open] summary::after { content: '▲'; }
-        
         .grid-disciplinas { padding: 15px; background: #16243d !important; border: 1px solid #22314d; border-top: none; margin-top: -14px; margin-bottom: 12px; border-bottom-left-radius: 6px; border-bottom-right-radius: 6px; }
         .disciplina-row { padding: 10px; border-bottom: 1px solid #22314d; font-size: 14px; display: flex; justify-content: space-between; color: #ffffff !important; }
         .grid-disciplinas, .disciplina-row span { color: #ffffff !important; }
         .disciplina-row span:last-child { color: #ff2a43 !important; font-weight: bold; }
-        
         .coupon-toggle-container { background: #16243d; padding: 15px; border-radius: 6px; margin: 15px 0; border: 1px solid #22314d; }
         .coupon-option { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; cursor: pointer; color: #ffffff; font-size: 14px; }
-        .coupon-option:last-child { margin-bottom: 0; }
         .coupon-option input { accent-color: #ff2a43; width: 16px; height: 16px; }
-        
         .price-box { margin: 15px 0; }
         .current-price { font-size: 34px; color: #ff2a43 !important; font-weight: bold; }
         .btn-checkout { display: block; width: 100%; text-align: center; background: #ff2a43; color: #fff !important; padding: 16px; border: none; border-radius: 4px; font-weight: bold; text-decoration: none; font-size: 18px; transition: 0.3s; cursor: pointer; margin-top: 15px; }
@@ -48,12 +41,12 @@
                     <span class="logo-accent">MEU</span> ANALYTICS <span class="logo-sub">LABS</span>
                 </div>
             </a>
-            <nav class="nav-menu">
+            <nav class="nav-menu nav-links">
                 <a href="https://cursos.meuanalytics.com.br/">Home</a>
                 <a href="https://cursos.meuanalytics.com.br/nossos-cursos/">Nossos Cursos</a>
                 <a href="#ingresso">Formas de Ingresso</a>
                 <a href="#sobre">Sobre Nós</a>
-                <a href="https://meuanalytics.com.br/login/index.html" class="btn-login-nav">Entrar</a>
+                <a href="https://meuanalytics.com.br/login/index.html" class="btn-login">Entrar</a>
                 <a href="https://cursos.meuanalytics.com.br/nossos-cursos/" class="btn-nav">Matricule-se</a>
             </nav>
         </div>
@@ -86,21 +79,14 @@
         <div class="pdp-sidebar">
             <span>INVESTIMENTO</span>
             <h3>Escolha seu benefício:</h3>
-            
             <div class="coupon-toggle-container">
                 <label class="coupon-option">
                     <input type="radio" name="coupon-selection" value="DESCONTOSOCIAL" checked onchange="updatePrice('DESCONTOSOCIAL')">
-                    <div>
-                        <strong>Desconto Social</strong><br>
-                        <span style="font-size: 12px; color: #94a3b8;">Disponível para novos alunos</span>
-                    </div>
+                    <div><strong>Desconto Social</strong><br><span style="font-size: 12px; color: #94a3b8;">Disponível para novos alunos</span></div>
                 </label>
                 <label class="coupon-option" style="margin-top: 12px;">
                     <input type="radio" name="coupon-selection" value="EXALUNO" onchange="updatePrice('EXALUNO')">
-                    <div>
-                        <strong>Já sou Ex-Aluno</strong><br>
-                        <span style="font-size: 12px; color: #94a3b8;">Desconto fidelidade Labs</span>
-                    </div>
+                    <div><strong>Já sou Ex-Aluno</strong><br><span style="font-size: 12px; color: #94a3b8;">Desconto fidelidade Labs</span></div>
                 </label>
             </div>
             
@@ -123,7 +109,6 @@
             const priceText = document.getElementById('displayed-price');
             const subtext = document.getElementById('displayed-subtext');
             const buyBtn = document.getElementById('btn-buy-course');
-            
             if (coupon === 'EXALUNO') {
                 priceText.innerText = "6x de R$ 84,90";
                 subtext.innerText = "ou à vista por R$ 509,40";
@@ -135,5 +120,7 @@
             }
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../auth-menu.js"></script>
 </body>
 </html>
