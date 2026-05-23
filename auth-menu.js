@@ -1,4 +1,4 @@
-// Configurações do Supabase
+// auth-menu.js - Atualizado e unificado
 const SUPABASE_URL = "https://lcslqpdoidgteihcxjqr.supabase.co";
 const SUPABASE_KEY = "sb_publishable_WnJunLw2RbK4yVjkN2r8IA_j_NWO3El";
 const COOKIE_DOMAIN = ".meuanalytics.com.br";
@@ -30,12 +30,13 @@ const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY, supabas
 
 document.addEventListener("DOMContentLoaded", () => {
     supabaseClient.auth.getSession().then(({ data: { session } }) => {
-        const navLinks = document.querySelector(".nav-menu"); // Garantir que busca o container correto
-        if (!navLinks) return;
+        const navMenu = document.querySelector(".nav-menu"); 
+        if (!navMenu) return;
 
         if (session && session.user) {
-            const btnLogin = navLinks.querySelector(".btn-login");
-            if (btnLogin) btnLogin.style.display = "none"; // Esconde, não remove, para não quebrar o layout
+            // Esconde o botão Entrar (não remove para não deslocar o layout)
+            const btnLogin = navMenu.querySelector(".btn-login");
+            if (btnLogin) btnLogin.style.display = "none"; 
 
             const userEmail = session.user.email || "U";
             const userLetter = userEmail.charAt(0).toUpperCase();
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
             profileWrapper.style.marginLeft = "10px";
             
             profileWrapper.innerHTML = `
-                <div id="avatar-trigger" style="width: 35px; height: 35px; background-color: #ff2a43; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; cursor: pointer; font-size: 14px; border: 2px solid #fff; box-shadow: 0 0 5px rgba(0,0,0,0.2);">
+                <div id="avatar-trigger" style="width: 35px; height: 35px; background-color: #ff2a43; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; cursor: pointer; font-size: 14px; border: 2px solid #fff; box-shadow: 0 0 5px rgba(0,0,0,0.2);" title="${userEmail}">
                     ${userLetter}
                 </div>
                 <div id="user-dropdown" style="display: none; position: absolute; right: 0; top: 120%; background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); min-width: 80px; z-index: 9999;">
@@ -58,22 +59,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             `;
             
-            navLinks.appendChild(profileWrapper);
+            navMenu.appendChild(profileWrapper);
 
-            // Toggle do dropdown
+            // Evento para abrir/fechar o dropdown
             document.getElementById("avatar-trigger").addEventListener("click", (e) => {
                 e.stopPropagation();
                 const menu = document.getElementById("user-dropdown");
                 menu.style.display = menu.style.display === "none" ? "block" : "none";
             });
 
-            // Fechar ao clicar fora
+            // Fecha ao clicar fora
             document.addEventListener("click", () => {
                 const menu = document.getElementById("user-dropdown");
                 if (menu) menu.style.display = "none";
             });
 
-            // Ação de Logout
+            // Logout
             document.getElementById("btn-logout").addEventListener("click", async () => {
                 await supabaseClient.auth.signOut();
                 window.location.reload();
