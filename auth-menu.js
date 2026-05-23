@@ -3,7 +3,6 @@ const SUPABASE_URL = "https://lcslqpdoidgteihcxjqr.supabase.co";
 const SUPABASE_KEY = "sb_publishable_WnJunLw2RbK4yVjkN2r8IA_j_NWO3El";
 const COOKIE_DOMAIN = ".meuanalytics.com.br";
 
-// Inicializa o cliente do Supabase
 const supabaseOptions = {
     auth: {
         persistSession: true,
@@ -29,55 +28,56 @@ const supabaseOptions = {
 
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY, supabaseOptions);
 
-// Gerencia o cabeçalho
 document.addEventListener("DOMContentLoaded", () => {
     supabaseClient.auth.getSession().then(({ data: { session } }) => {
-        const navLinks = document.querySelector(".nav-links");
+        const navLinks = document.querySelector(".nav-menu"); // Garantir que busca o container correto
         if (!navLinks) return;
 
         if (session && session.user) {
-            // Remove o botão "Entrar" original
             const btnLogin = navLinks.querySelector(".btn-login");
-            if (btnLogin) btnLogin.remove();
+            if (btnLogin) btnLogin.style.display = "none"; // Esconde, não remove, para não quebrar o layout
 
-            // Cria o menu de perfil com dropdown
             const userEmail = session.user.email || "U";
             const userLetter = userEmail.charAt(0).toUpperCase();
 
-            const profileContainer = document.createElement("div");
-            profileContainer.style.position = "relative";
-            profileContainer.style.marginLeft = "15px";
-            profileContainer.innerHTML = `
-                <div id="avatar-trigger" style="width: 38px; height: 38px; background-color: #ff2a43; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; cursor: pointer; border: 2px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1);" title="${userEmail}">
+            // Cria o wrapper do perfil
+            const profileWrapper = document.createElement("div");
+            profileWrapper.style.position = "relative";
+            profileWrapper.style.display = "inline-flex";
+            profileWrapper.style.alignItems = "center";
+            profileWrapper.style.marginLeft = "10px";
+            
+            profileWrapper.innerHTML = `
+                <div id="avatar-trigger" style="width: 35px; height: 35px; background-color: #ff2a43; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; cursor: pointer; font-size: 14px; border: 2px solid #fff; box-shadow: 0 0 5px rgba(0,0,0,0.2);">
                     ${userLetter}
                 </div>
-                <div id="user-dropdown" style="display: none; position: absolute; right: 0; top: 45px; background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px; box-shadow: 0 10px 15px rgba(0,0,0,0.1); width: 100px; z-index: 1000;">
-                    <button id="btn-logout" style="width: 100%; background: none; border: none; color: #1e293b; cursor: pointer; font-size: 14px; text-align: left; padding: 5px;">
+                <div id="user-dropdown" style="display: none; position: absolute; right: 0; top: 120%; background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.15); min-width: 80px; z-index: 9999;">
+                    <button id="btn-logout" style="width: 100%; background: none; border: none; color: #334155; cursor: pointer; font-size: 13px; text-align: center; padding: 8px; font-weight: 500;">
                         Sair
                     </button>
                 </div>
             `;
-            navLinks.appendChild(profileContainer);
+            
+            navLinks.appendChild(profileWrapper);
 
-            // Evento para abrir/fechar o dropdown
+            // Toggle do dropdown
             document.getElementById("avatar-trigger").addEventListener("click", (e) => {
                 e.stopPropagation();
-                const dropdown = document.getElementById("user-dropdown");
-                dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+                const menu = document.getElementById("user-dropdown");
+                menu.style.display = menu.style.display === "none" ? "block" : "none";
             });
 
-            // Fecha o dropdown ao clicar em qualquer lugar da tela
+            // Fechar ao clicar fora
             document.addEventListener("click", () => {
-                const dropdown = document.getElementById("user-dropdown");
-                if (dropdown) dropdown.style.display = "none";
+                const menu = document.getElementById("user-dropdown");
+                if (menu) menu.style.display = "none";
             });
 
-            // Evento de Logout
+            // Ação de Logout
             document.getElementById("btn-logout").addEventListener("click", async () => {
                 await supabaseClient.auth.signOut();
                 window.location.reload();
             });
-
         }
     });
 });
